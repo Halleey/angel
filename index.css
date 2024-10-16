@@ -1,0 +1,207 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe4e1; /* Fundo rosa claro */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo */
+    min-height: 100vh; /* Garante que o corpo ocupe no mínimo a altura da tela */
+    overflow-x: hidden;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff0f5; /* Fundo rosa suave */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    z-index: 2;
+    margin: 20px 10px; /* Adiciona margem para evitar que o conteúdo encoste nas bordas */
+}
+
+/* Efeito de fade-in no carregamento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Título */
+h1 {
+    color: #ff69b4; /* Rosa brilhante */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+/* Animação de glow no título */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
+    100% { text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493; }
+}
+
+/* Citação */
+.quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #ff1493; /* Rosa mais escuro */
+    font-size: 1.3rem;
+}
+
+/* Cartão de mensagem */
+.card {
+    background-color: #ffe4e1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4b0082; /* Texto em roxo suave */
+}
+
+/* Botão para mudar o tema */
+button {
+    padding: 10px 20px;
+    background-color: #ff1493; /* Rosa vibrante */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff69b4;
+    transform: scale(1.05);
+}
+
+/* Partículas animadas (como "efeitos na tela") */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,182,193,0.5), transparent 70%);
+    animation: particle 10s infinite;
+    z-index: 1;
+}
+
+@keyframes particle {
+    0% { transform: translateX(0) translateY(0); opacity: 1; }
+    50% { transform: translateX(100px) translateY(50px); opacity: 0.6; }
+    100% { transform: translateX(-100px) translateY(-50px); opacity: 1; }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 12px;
+    }
+}
+/* Container do bolo */
+.cake-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cake {
+    width: 150px;
+    animation: bounce 5s infinite ease-in-out;
+}
+
+/* Animação do balão */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Efeito de balões flutuantes */
+@keyframes float {
+    0% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background-color: pink;
+    border-radius: 50%;
+    animation: float 10s linear infinite;
+}
+
+.balloon:nth-child(2) {
+    left: 20%;
+    background-color: lightblue;
+    animation-duration: 9s;
+    animation-delay: 2s;
+}
+
+.balloon:nth-child(3) {
+    left: 40%;
+    background-color: lightgreen;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+.balloon:nth-child(4) {
+    left: 60%;
+    background-color: yellow;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.balloon:nth-child(5) {
+    left: 80%;
+    background-color: orange;
+    animation-duration: 6s;
+    animation-delay: 4s;
+}
